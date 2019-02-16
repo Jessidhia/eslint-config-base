@@ -1,0 +1,49 @@
+{
+  "name": "@jessidhia/eslint-config-base",
+  "version": "0.1.0",
+  "description": "My personal eslint config without bundled dependencies",
+  "repository": "https://github.com/Jessidhia/eslint-config",
+  "author": "Jessica Franco",
+  "license": "MIT",
+  "engines": {
+    "node": ">=8.6.0"
+  },
+  "keywords": [
+    "eslintconfig"
+  ],
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "prepublishOnly": "run-s test",
+    "test": "run-s eslint-config-prettier-check eslint",
+    "eslint": "eslint --ext js,ts,tsx .",
+    "eslint-config-prettier-check": "eslint --print-config . | eslint-config-prettier-check"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "~1.3.0",
+    "@typescript-eslint/parser": "~1.3.0",
+    "eslint": "^5.13.0",
+    "eslint-config-prettier": "^4.0.0",
+    "eslint-plugin-eslint-comments": "^3.1.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react-hooks": "^1.0.2",
+    "npm-run-all": "^4.1.5",
+    "prettier": "~1.16.4",
+    "typescript": "~3.3.3"
+  },
+  "peerDependencies": {
+    "@typescript-eslint/eslint-plugin": ">=1.3.0",
+    "@typescript-eslint/parser": ">=1.3.0",
+    "eslint": ">=5.13.0",
+    "eslint-plugin-eslint-comments": ">=3.1.0",
+    "eslint-plugin-prettier": ">=3.0.1",
+    "eslint-plugin-react-hooks": ">=1.0.2",
+    "prettier": ">=1.16.4",
+    "typescript": ">=3.3.3"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  }
+}
