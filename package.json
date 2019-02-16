@@ -6,7 +6,8 @@
   "author": "Jessica Franco",
   "license": "MIT",
   "engines": {
-    "node": ">=8.6.0"
+    "node": ">=8.10.0",
+    "yarn": "^1.13.0"
   },
   "keywords": [
     "eslintconfig"
