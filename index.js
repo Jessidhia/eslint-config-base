@@ -5,15 +5,27 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:eslint-comments/recommended',
+    'plugin:react/recommended',
+    'plugin:jsx-a11y/recommended',
     'prettier',
-    'prettier/@typescript-eslint'
+    'prettier/@typescript-eslint',
+    'prettier/react'
   ],
 
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    sourceType: 'module'
+    sourceType: 'module',
     // https://github.com/typescript-eslint/typescript-eslint/issues/101
     //project: true
+    ecmaFeatures: {
+      jsx: true
+    }
+  },
+  settings: {
+    react: {
+      version: 'detect'
+    },
+    linkComponents: [{ name: 'Link', linkAttribute: 'to' }]
   },
 
   overrides: [
@@ -180,8 +192,41 @@ module.exports = {
     // '@typescript-eslint/promise-function-async': 'error'
     // #endregion
 
-    // #region react
-    'react-hooks/rules-of-hooks': 'error'
+    // #region react and react-hooks
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'error',
+
+    'react/button-has-type': 'error',
+    'react/destructuring-assignment': 'error',
+    'react/no-access-state-in-setstate': 'error',
+    'react/no-danger': 'error',
+    'react/no-typos': 'error',
+    'react/no-this-in-sfc': 'error',
+    'react/no-unsafe': ['error', { checkAliases: true }],
+    'react/no-unused-prop-types': 'error',
+    'react/no-unused-state': 'error',
+    'react/prefer-es6-class': 'error',
+    'react/prefer-stateless-function': 'error',
+    'react/prop-types': ['error', { skipUndeclared: true }],
+    'react/self-closing-comp': 'error',
+    'react/void-dom-elements-no-children': 'error',
+    // #endregion
+
+    // #region jsx
+    'react/jsx-boolean-value': 'error',
+    'react/jsx-handler-names': 'error',
+    'react/jsx-max-depth': ['error', { max: 7 }],
+    'react/jsx-fragments': ['error', 'syntax'],
+    'react/jsx-pascal-case': 'error',
+    'react/jsx-sort-props': [
+      'error',
+      {
+        callbacksLast: true,
+        shorthandFirst: true,
+        reservedFirst: true,
+        noSortAlphabetically: true
+      }
+    ]
     // #endregion
   }
 }
