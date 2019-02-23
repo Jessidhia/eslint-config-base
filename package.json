@@ -1,6 +1,6 @@
 {
   "name": "@jessidhia/eslint-config-base",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "My personal eslint config without bundled dependencies",
   "repository": "https://github.com/Jessidhia/eslint-config",
   "author": "Jessica Franco",
